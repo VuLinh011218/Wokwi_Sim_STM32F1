@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "1. Build STM32 Firmware (make)",
+      "type": "shell",
+      "command": "${workspaceFolder}/build.bat",
+      "problemMatcher": "$gcc",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "2. Start Wokwi Simulator",
+      "type": "shell",
+      "command": "echo Starting Wokwi Simulator... ${input:startWokwi}",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "never"
+      }
+    },
+    {
+      "label": "Build & Run Wokwi Simulator",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "1. Build STM32 Firmware (make)",
+        "2. Start Wokwi Simulator"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Clean STM32 Firmware (make clean)",
+      "type": "shell",
+      "command": "${workspaceFolder}/build.bat",
+      "args": ["clean"],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "startWokwi",
+      "type": "command",
+      "command": "wokwi-vscode.start"
+    }
+  ]
+}

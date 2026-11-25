@@ -1,0 +1,8 @@
+[wokwi]
+version = 1
+firmware = '2.Firmware/build/Demo.hex'
+elf = '2.Firmware/build/Demo.elf'
+
+[[chip]]
+name = 'eeprom-24c256'
+binary = 'chips/eeprom-24c256.chip.wasm'

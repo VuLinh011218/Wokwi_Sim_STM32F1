@@ -1,0 +1,11 @@
+{
+  "name": "EEPROM 24C256",
+  "author": "STM32 Demo",
+  "pins": [
+    "GND",
+    "VCC",
+    "SDA",
+    "SCL"
+  ],
+  "controls": []
+}
